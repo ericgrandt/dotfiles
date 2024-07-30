@@ -1,15 +1,4 @@
-require("eric.core.autocommands")
-require("eric.core.remap")
-require("eric.core.lazy")
-
-require("eric.plugins.colors")
-require("eric.plugins.harpoon")
-require("eric.plugins.lsp")
-require("eric.plugins.lualine")
-require("eric.plugins.nvim-cmp")
-require("eric.plugins.telescope")
-require("eric.plugins.tree")
-require("eric.plugins.treesitter")
+require("config.lazy")
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -27,6 +16,7 @@ vim.o.incsearch = true
 
 vim.o.termguicolors = true
 
+vim.o.number = true
 vim.o.relativenumber = true
 
 vim.diagnostic.config({
@@ -35,10 +25,4 @@ vim.diagnostic.config({
     },
 })
 
-vim.api.nvim_set_option('clipboard', 'unnamed')
-
-vim.filetype.add({
-    extension = {
-        hurl = 'hurl',
-    }
-})
+vim.cmd.colorscheme "tokyonight-night"
