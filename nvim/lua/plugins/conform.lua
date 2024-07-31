@@ -4,11 +4,11 @@ return {
         event = { "BufWritePre" },
         keys = {
             {
-                "<leader>fmt",
+                "<leader>cf",
                 function()
                     require("conform").format({ async = true, lsp_fallback = true })
                 end,
-                mode = "",
+                mode = { "n", "v" },
                 desc = "Format buffer"
             }
         },
@@ -22,7 +22,7 @@ return {
                 }
             end,
             formatters_by_ft = {
-                rust = { "rustfmt" }
+                rust = { "rustfmt", lsp_format = "fallback" }
             }
         },
     }
